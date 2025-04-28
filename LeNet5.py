@@ -49,12 +49,12 @@ X_val_reshaped = x_val.reshape(x_val.shape[0], x_val.shape[1], 1, 1)
 X_test_reshaped = x_test.reshape(x_test.shape[0], x_test.shape[1], 1, 1)
 
 # Train the model
-#early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
+early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
 history = model.fit(X_train_reshaped, y_train,
                     validation_data=(X_val_reshaped, y_val),
                     epochs=50,
                     batch_size=32,
-                    #callbacks=[early_stopping],
+                    callbacks=[early_stopping],
                     verbose=1)
 
 # 3. Model Evaluation and Analysis

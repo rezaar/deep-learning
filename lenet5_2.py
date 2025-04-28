@@ -3,12 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 import seaborn as sns
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.metrics import mean_absolute_error, mean_squared_error ,r2_score
 from keras.models import Sequential
 from keras.layers import Conv1D ,MaxPool1D, Flatten, Dense
 from keras.layers import Dropout, BatchNormalization
-from keras.optimizers import Nadam
+from keras.optimizers import Nadam, Adam
 from keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
 from keras.regularizers import l1_l2
 
@@ -57,17 +57,17 @@ model = Sequential([
     Dense(units=1) 
 ])
 #کامپایل مدل
-optimizer = Nadam(learning_rate=0.001)
-model.compile(optimizer=optimizer, loss='mean_squared_error', metrics=['mae'])
+optimizer = Nadam(learning_rate=0.01)
+model.compile(optimizer=optimizer, loss='mean_squared_error', metrics=['mse'])
 
 # آموزش مدل
-early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
+early_stopping = EarlyStopping(monitor='val_loss', patience=8, restore_best_weights=True)
 model_checkpoint = ModelCheckpoint('best_model.h5', monitor='val_loss', save_best_only=True, mode='min')
 reduc_lc = ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=3)
 history = model.fit(x_train, y_train,
                     validation_data=(x_val, y_val),
-                    epochs=150,
-                    batch_size=32,
+                    epochs=120,
+                    batch_size=16,
                     callbacks=[early_stopping,model_checkpoint,reduc_lc],
                     verbose=1)
 
