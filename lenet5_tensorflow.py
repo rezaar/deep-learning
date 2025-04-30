@@ -62,7 +62,7 @@ model.compile(optimizer=optimizer, loss='mean_squared_error', metrics=['mse'])
 
 # آموزش مدل
 early_stopping = EarlyStopping(monitor='val_loss', patience=8, restore_best_weights=True)
-model_checkpoint = ModelCheckpoint('best_model.h5', monitor='val_loss', save_best_only=True, mode='min')
+model_checkpoint = ModelCheckpoint('best_model_LeNet5.h5', monitor='val_loss', save_best_only=True, mode='min')
 reduc_lc = ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=3)
 history = model.fit(x_train, y_train,
                     validation_data=(x_val, y_val),
