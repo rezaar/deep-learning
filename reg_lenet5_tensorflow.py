@@ -74,7 +74,7 @@ history = model.fit(x_train, y_train,
 y_pred = model.predict(x_test).flatten()
 errors = y_pred - y_test
 
-plt.figure(-figsize=(10, 6))
+plt.figure(figsize=(10, 6))
 plt.plot(history.history['loss'], label='Training Loss')
 plt.plot(history.history['val_loss'], label='Validation Loss')
 plt.title('Loss Curve')
