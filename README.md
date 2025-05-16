@@ -1,7 +1,7 @@
 # 🧠 تمرینات درس یادگیری ژرف (Deep Learning)
 ### دانشگاه تفرش - سال تحصیلی 04_1403
 ### 👩‍🏫 دکتر الهه سادات عبدلکریمی
-![Python](https://img.shields.io/badge/Python-3.10-blue)ل          
+![Python](https://img.shields.io/badge/Python-3.10-blue)        
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.13-orange)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.1-red)
 ![NumPy](https://img.shields.io/badge/NumPy-1.26-blue)
@@ -12,7 +12,7 @@
 ![Keras](https://img.shields.io/badge/Keras-2.13-red)
 ![Seaborn](https://img.shields.io/badge/Seaborn-0.13-cyan)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
-[Colab](https://img.shields.io/badge/Google-Colab-yellow)
+![Colab](https://img.shields.io/badge/Google-Colab-yellow)
 ![GitHub](https://img.shields.io/badge/status-active-brightgreen)
 ![License](https://img.shields.io/badge/license-Academic-lightgrey)
 
